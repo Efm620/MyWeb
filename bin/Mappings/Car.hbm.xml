@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true" namespace="AutoBase.Model" assembly="AutoBase">
+
+  <class name="AutoBase.Model.Car" table="AutoBase.Car"  xmlns="urn:nhibernate-mapping-2.2">
+    <id name="Id" column="id" type="int">
+      <generator class="identity"/>
+    </id>
+    <property name="Number" column="Number" type="String"/>
+    <property name="Color" column="Color" type="String"/>
+    <property name="BodyType" column="BodyType" type="String"/>
+    <property name="Mark" column="Mark" type="String"/>
+    <property name="Model" column="Model" type="String"/>
+    <many-to-one name="idEngine" column="idEngine" class ="AutoBase.Model.Engine" not-null="true"/>
+  </class>
+
+</hibernate-mapping>
